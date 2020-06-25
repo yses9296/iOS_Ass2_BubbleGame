@@ -131,25 +131,27 @@ class GameViewController: UIViewController {
         }
         timerSeconds -= 1
     }
+    
+    func checkHighScore() {
+         if scoreRankRecord == nil {
+             saveScore()
+         } else {
+             rankingRecord = scoreRankRecord!
+             if rankingRecord.keys.contains("\(playerName)") {
+                 let scoreCurrent = rankingRecord["\(playerName)"]!
+                 if scoreCurrent < score {
+                     saveScore()
+                 }
+             } else {
+                 saveScore()
+             }
+         }
+     }
 
     func saveScore() {
         rankingRecord.updateValue(score, forKey: "\(playerName)")
-        UserDefaults.standard.set(rankingRecord, forKey: "rank")
-    }
+        UserDefaults.standard.set(rankingRecord, forKey: "scoreRank")}
+    
 
-    func checkHighScore() {
-        if scoreRankRecord == nil {
-            saveScore()
-        } else {
-            rankingRecord = scoreRankRecord!
-            if rankingRecord.keys.contains("\(playerName)") {
-                let currentScore = rankingRecord["\(playerName)"]!
-                if currentScore < score {
-                    saveScore()
-                }
-            } else {
-                saveScore()
-            }
-        }
-    }
+ 
 }

@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="EunseoChoi_13340260_A2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="EunseoChoi_13340260_A2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +98,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="HOME"/>
                                 <connections>
-                                    <action selector="homeButton:" destination="w9J-WK-iq9" eventType="touchUpInside" id="1BD-NY-uca"/>
+                                    <action selector="home:" destination="w9J-WK-iq9" eventType="touchUpInside" id="kzK-oI-kbm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -255,17 +255,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="START"/>
                                 <connections>
-                                    <segue destination="oP2-tN-bvk" kind="show" identifier="startGame" id="wMv-EA-IRG"/>
+                                    <segue destination="oP2-tN-bvk" kind="show" identifier="start" id="wMv-EA-IRG"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="oQz-76-kCB">
-                                <rect key="frame" x="87" y="448" width="240" height="31"/>
-                                <connections>
-                                    <action selector="bubbleNumSetting:" destination="fVi-lE-zjI" eventType="valueChanged" id="rJw-bQ-KeR"/>
-                                    <action selector="setSlider:" destination="fVi-lE-zjI" eventType="valueChanged" id="Ffc-LC-FlH"/>
-                                    <action selector="setting:" destination="fVi-lE-zjI" eventType="valueChanged" id="Hwo-IC-J3K"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max number of Bubble" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oO-9m-udW">
                                 <rect key="frame" x="109" y="384" width="196" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -283,50 +275,56 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vli-4M-eBR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vli-4M-eBR">
                                 <rect key="frame" x="194.5" y="294" width="25" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minValue="1" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="tsu-rc-ucx">
-                                <rect key="frame" x="87" y="326" width="240" height="31"/>
-                                <connections>
-                                    <action selector="setSlider:" destination="fVi-lE-zjI" eventType="valueChanged" id="GzG-Kb-uA6"/>
-                                    <action selector="setting:" destination="fVi-lE-zjI" eventType="valueChanged" id="6EV-yc-ZBU"/>
-                                    <action selector="timerSetting:" destination="fVi-lE-zjI" eventType="valueChanged" id="3oQ-kF-aIp"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNW-aY-Kbn">
                                 <rect key="frame" x="157" y="262" width="100" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="1" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="lyY-7n-bR3">
+                                <rect key="frame" x="61" y="331" width="292" height="30"/>
+                                <connections>
+                                    <action selector="timerSetting:" destination="fVi-lE-zjI" eventType="valueChanged" id="aN9-lP-Naf"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="xJc-dC-kI1">
+                                <rect key="frame" x="61" y="448" width="292" height="31"/>
+                                <connections>
+                                    <action selector="maxNum:" destination="fVi-lE-zjI" eventType="valueChanged" id="FFg-ma-IFa"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="tsu-rc-ucx" firstAttribute="centerX" secondItem="LUl-Hu-z6P" secondAttribute="centerX" id="0BM-uj-Rcf"/>
                             <constraint firstItem="it2-gb-Nff" firstAttribute="top" secondItem="LUl-Hu-z6P" secondAttribute="top" constant="111" id="2yJ-Gt-pFG"/>
                             <constraint firstItem="LUl-Hu-z6P" firstAttribute="bottom" secondItem="swG-4w-kTQ" secondAttribute="bottom" constant="141" id="6oc-ca-Fa1"/>
                             <constraint firstItem="it2-gb-Nff" firstAttribute="centerX" secondItem="LUl-Hu-z6P" secondAttribute="centerX" id="7si-uf-0PW"/>
-                            <constraint firstItem="oQz-76-kCB" firstAttribute="leading" secondItem="LUl-Hu-z6P" secondAttribute="leading" constant="89" id="BrN-Bs-fCP"/>
+                            <constraint firstItem="lyY-7n-bR3" firstAttribute="leading" secondItem="LUl-Hu-z6P" secondAttribute="leading" constant="63" id="8Vq-yx-2c7"/>
                             <constraint firstItem="8a1-OJ-j5v" firstAttribute="top" secondItem="LUl-Hu-z6P" secondAttribute="top" constant="79" id="EUP-gM-g5B"/>
-                            <constraint firstItem="oQz-76-kCB" firstAttribute="top" secondItem="LUl-Hu-z6P" secondAttribute="top" constant="360" id="HiV-Nt-AqB"/>
-                            <constraint firstItem="tsu-rc-ucx" firstAttribute="top" secondItem="LUl-Hu-z6P" secondAttribute="top" constant="238" id="IPg-9O-lco"/>
                             <constraint firstItem="YNW-aY-Kbn" firstAttribute="top" secondItem="LUl-Hu-z6P" secondAttribute="top" constant="174" id="Itv-ZN-AhL"/>
                             <constraint firstItem="swG-4w-kTQ" firstAttribute="centerX" secondItem="LUl-Hu-z6P" secondAttribute="centerX" id="JyL-y4-3uL"/>
+                            <constraint firstItem="LUl-Hu-z6P" firstAttribute="trailing" secondItem="lyY-7n-bR3" secondAttribute="trailing" constant="63" id="L6M-St-TB8"/>
+                            <constraint firstItem="LUl-Hu-z6P" firstAttribute="bottom" secondItem="lyY-7n-bR3" secondAttribute="bottom" constant="502" id="MDq-l7-jK4"/>
+                            <constraint firstItem="xJc-dC-kI1" firstAttribute="top" secondItem="LUl-Hu-z6P" secondAttribute="top" constant="360" id="N7J-Bq-EYv"/>
                             <constraint firstItem="mfA-fi-PCW" firstAttribute="top" secondItem="LUl-Hu-z6P" secondAttribute="top" constant="328" id="SSK-vA-UCI"/>
+                            <constraint firstItem="xJc-dC-kI1" firstAttribute="leading" secondItem="LUl-Hu-z6P" secondAttribute="leading" constant="63" id="WQb-Xl-n58"/>
                             <constraint firstItem="Vli-4M-eBR" firstAttribute="top" secondItem="LUl-Hu-z6P" secondAttribute="top" constant="206" id="Yoo-NY-o6T"/>
-                            <constraint firstItem="oQz-76-kCB" firstAttribute="centerX" secondItem="LUl-Hu-z6P" secondAttribute="centerX" id="Zv8-aC-WOm"/>
+                            <constraint firstItem="lyY-7n-bR3" firstAttribute="top" secondItem="LUl-Hu-z6P" secondAttribute="top" constant="243" id="dEH-hF-Q2f"/>
                             <constraint firstItem="6oO-9m-udW" firstAttribute="top" secondItem="LUl-Hu-z6P" secondAttribute="top" constant="296" id="dqL-iG-cUl"/>
+                            <constraint firstItem="lyY-7n-bR3" firstAttribute="centerX" secondItem="LUl-Hu-z6P" secondAttribute="centerX" id="fHW-Ri-AjC"/>
                             <constraint firstItem="mfA-fi-PCW" firstAttribute="centerX" secondItem="LUl-Hu-z6P" secondAttribute="centerX" id="hsd-dH-Co9"/>
                             <constraint firstItem="Vli-4M-eBR" firstAttribute="centerX" secondItem="LUl-Hu-z6P" secondAttribute="centerX" id="iA6-tb-Syx"/>
                             <constraint firstItem="YNW-aY-Kbn" firstAttribute="centerX" secondItem="LUl-Hu-z6P" secondAttribute="centerX" id="jOp-k2-iM1"/>
                             <constraint firstItem="8a1-OJ-j5v" firstAttribute="centerX" secondItem="LUl-Hu-z6P" secondAttribute="centerX" id="m6w-oO-cV1"/>
                             <constraint firstItem="LUl-Hu-z6P" firstAttribute="trailing" secondItem="it2-gb-Nff" secondAttribute="trailing" constant="99" id="pDo-IV-l1r"/>
+                            <constraint firstItem="xJc-dC-kI1" firstAttribute="centerX" secondItem="LUl-Hu-z6P" secondAttribute="centerX" id="qvK-ol-KBj"/>
                             <constraint firstItem="6oO-9m-udW" firstAttribute="centerX" secondItem="LUl-Hu-z6P" secondAttribute="centerX" id="uas-zC-qcV"/>
-                            <constraint firstItem="tsu-rc-ucx" firstAttribute="leading" secondItem="LUl-Hu-z6P" secondAttribute="leading" constant="89" id="wmm-Gc-icH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LUl-Hu-z6P"/>
                     </view>
@@ -339,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUj-1w-aRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="139"/>
+            <point key="canvasLocation" x="1860.8695652173915" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>

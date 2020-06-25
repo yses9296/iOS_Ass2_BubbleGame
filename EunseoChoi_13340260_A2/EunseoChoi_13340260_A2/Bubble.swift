@@ -9,20 +9,17 @@
 import UIKit
 
 class Bubble: UIButton {
-    var value: Double = 0
+   
+    var value: Double = 1
     var radius: UInt32 {
         return UInt32(UIScreen.main.bounds.width / 12)
-    }
-    
-    required init?(coder aDecoder: NSCoder){
-        super.init(coder: aDecoder)
     }
     
     override init(frame: CGRect){
         super.init(frame: frame)
         self.layer.cornerRadius = CGFloat(radius)
 
-        let possibility = Int(arc4random_uniform(100))
+        let possibility = Int.random(in: 0...100)           // Int(arc4random_uniform(100))
         switch possibility {
         case 0...39:
             self.backgroundColor = UIColor.red
@@ -44,6 +41,10 @@ class Bubble: UIButton {
         }
     }
     
+    required init?(coder aDecoder: NSCoder){
+        super.init(coder: aDecoder)
+    }
+    
      func animation() {
         let animation = CASpringAnimation(keyPath: "transform.scale")
         animation.duration = 0.6
@@ -52,7 +53,8 @@ class Bubble: UIButton {
         animation.repeatCount = 1
         animation.initialVelocity = 0.5
         animation.damping = 1
-           
+        animation.autoreverses = true
+        
         layer.add(animation, forKey: nil)
     }
     

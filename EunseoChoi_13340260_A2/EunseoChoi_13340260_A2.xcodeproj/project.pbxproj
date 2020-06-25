@@ -13,7 +13,7 @@
 		A6F18B1D2476E7E200F90695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6F18B1B2476E7E200F90695 /* Main.storyboard */; };
 		A6F18B1F2476E7E900F90695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6F18B1E2476E7E900F90695 /* Assets.xcassets */; };
 		A6F18B222476E7E900F90695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6F18B202476E7E900F90695 /* LaunchScreen.storyboard */; };
-		A6F18B2A2476E83900F90695 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F18B292476E83900F90695 /* HomeViewController.swift */; };
+		A6F18B2A2476E83900F90695 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F18B292476E83900F90695 /* ViewController.swift */; };
 		A6F18B2C2476E87100F90695 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F18B2B2476E87100F90695 /* ScoreViewController.swift */; };
 		A6F18B2E2476E89000F90695 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F18B2D2476E89000F90695 /* LoginViewController.swift */; };
 		A6F18B322476F2DF00F90695 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F18B312476F2DF00F90695 /* Bubble.swift */; };
@@ -28,7 +28,7 @@
 		A6F18B1E2476E7E900F90695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6F18B212476E7E900F90695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6F18B232476E7E900F90695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6F18B292476E83900F90695 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A6F18B292476E83900F90695 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6F18B2B2476E87100F90695 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		A6F18B2D2476E89000F90695 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A6F18B312476F2DF00F90695 /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 				A6F18B192476E7E200F90695 /* GameViewController.swift */,
 				A6F18B312476F2DF00F90695 /* Bubble.swift */,
 				A6F18B1B2476E7E200F90695 /* Main.storyboard */,
-				A6F18B292476E83900F90695 /* HomeViewController.swift */,
+				A6F18B292476E83900F90695 /* ViewController.swift */,
 				A6F18B2B2476E87100F90695 /* ScoreViewController.swift */,
 				A6F18B2D2476E89000F90695 /* LoginViewController.swift */,
 				A6F18B1E2476E7E900F90695 /* Assets.xcassets */,
@@ -156,7 +156,7 @@
 				A6F18B2C2476E87100F90695 /* ScoreViewController.swift in Sources */,
 				A6F18B322476F2DF00F90695 /* Bubble.swift in Sources */,
 				A6F18B182476E7E200F90695 /* SceneDelegate.swift in Sources */,
-				A6F18B2A2476E83900F90695 /* HomeViewController.swift in Sources */,
+				A6F18B2A2476E83900F90695 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

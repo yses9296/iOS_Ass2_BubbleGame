@@ -19,35 +19,34 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var highScore2: UILabel!
     @IBOutlet weak var playerName3: UILabel!
     @IBOutlet weak var highScore3: UILabel!
+
     
-    @IBAction func homeButton(_ sender: UIButton) {
-        let viewDestination = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        self.navigationController?.pushViewController(viewDestination, animated: true)        //present(destinationView, animated: true, completion: nil)
-        
+    
+    @IBAction func home(_ sender: UIButton) {
+        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        self.navigationController!.pushViewController(homeViewController, animated: true)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-                
         if let rankingRecord = UserDefaults.standard.dictionary(forKey: "scoreRank") as! [String : Double]? {
             sortedScore = rankingRecord.sorted(by: {$0.value > $1.value})
             
-            if sortedScore.count == 1 {
+            if sortedScore.count == 1 { //Number of player = 1
                 playerName1.text = sortedScore[0].key
                 highScore1.text = "\(sortedScore[0].value)"
-            } else if sortedScore.count == 2 {
+            } else if sortedScore.count == 2 { //Number of player = 2
                 playerName1.text = sortedScore[0].key
+                highScore1.text = "\(sortedScore[0].value)"
                 playerName2.text = sortedScore[1].key
-                highScore1.text = "\(sortedScore[0].value)"
                 highScore2.text = "\(sortedScore[1].value)"
-            } else {
+            } else { // Number of player = 3...
                 playerName1.text = sortedScore[0].key
+                highScore1.text = "\(sortedScore[0].value)"
                 playerName2.text = sortedScore[1].key
+                highScore2.text = "\(sortedScore[1].value)"
                 playerName3.text = sortedScore[2].key
-                highScore1.text = "\(sortedScore[0].value)"
-                highScore2.text = "\(sortedScore[1].value)"
                 highScore3.text = "\(sortedScore[2].value)"
             }
         }        // Do any additional setup after loading the view.
